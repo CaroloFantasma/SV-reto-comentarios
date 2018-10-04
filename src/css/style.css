@@ -1,0 +1,48 @@
+
+.formPost {
+  margin-top: 0%;
+  margin-bottom: 0%;
+  padding-top: 0%;
+}
+
+#messageArea {
+  margin-top: 5%;
+  background-color: #d64f4f11;
+}
+
+#btnPost {
+  margin-left: 56%;
+  width: 70%;
+  background-color: #d64f4f;
+  color: #FAFAFA;
+  border: #444343;
+}
+
+#divContainer {
+  border: solid grey 1px;
+  width: 90%;
+  margin-top: 1%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2%;
+  background-color: #d64f4f11;
+  border-radius: 3px;
+}
+
+@media(min-width: 768px) {
+  
+  #messageArea {
+    width: 50%;
+    height: 80%;
+    margin-left: 25%;
+  }
+
+  #divContainer {
+    width: 45%;
+  }
+
+  #btnPost{
+    width: 20% ;
+  }
+}

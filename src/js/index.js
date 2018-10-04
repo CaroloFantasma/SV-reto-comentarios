@@ -34,3 +34,42 @@ db.collection('userMessages').onSnapshot((querySnapshot) => {
   });
 });
 
+// Delete
+function deletePost(id) {
+  let removeMessage = confirm('¿Quiere eliminar la publicación?');
+  if (removeMessage === true) {
+    db.collection('userMessages').doc(id).delete().then(function() {
+      console.log('Document successfully deleted!');
+    }).catch(function(error) {
+      console.error('Error removing document: ', error);
+    });
+  }
+}
+
+// Update
+function edit(id, message) {
+  document.getElementById('messageArea').value = message;
+  let btnPost = document.getElementById('btnPost');
+  btnPost.innerHTML = 'Guardar cambios';
+
+  btnPost.onclick = function() {
+    let editPost = db.collection('userMessages').doc(id);
+
+    let message = document.getElementById('messageArea').value;
+
+    return editPost.update(
+      {
+        textMessage: message
+      })
+      .then(function() {
+        console.log('Document successfully updated!');
+        btnPost.innerHTML = 'Publicar';
+        btnPost.onclick = userPost;
+        document.getElementById('messageArea').value = '';
+      })
+      .catch(function(error) {
+        // The document probably doesn't exist.
+        console.error('Error updating document: ', error);
+      });
+  };
+} 
