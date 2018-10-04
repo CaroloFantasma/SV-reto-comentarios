@@ -1,9 +1,9 @@
+// Create
 let db = firebase.firestore();
-
 function userPost() {
   let message = document.getElementById('messageArea').value;
   if (message === '') {
-    alert('La publicación debe contener texto, por favor ingresa un mensaje');
+    alert('Por favor ingresa un mensaje');
   } else {
     db.collection('userMessages').add({
       textMessage: message,
@@ -18,7 +18,7 @@ function userPost() {
   };
 }
 
-// Leer documentos (read)
+// Read
 let container = document.getElementById('messageContainer');
 db.collection('userMessages').onSnapshot((querySnapshot) => {
   container.innerHTML = '';
@@ -26,52 +26,11 @@ db.collection('userMessages').onSnapshot((querySnapshot) => {
     console.log(`${doc.id} => ${doc.data().textMessage}`);
     container.innerHTML += `
       <div class="col-12" id="divContainer">
-      <img src="${doc.data().img}" class="img-fluid" alt="Responsive image">
       <p>${doc.data().textMessage}</p>
       <i type="button" class="far fa-edit 2x" onclick="edit('${doc.id}','${doc.data().textMessage}')"> </i>
       <i type="button" class="fas fa-trash-alt 2x" onclick="deletePost('${doc.id}')"></i>
       </div>
-      <i class="fas fa-paw" id='pawIcon' onclick ='likeCounter()'></i> <span id='counterResult'> <span/>
       `;
   });
 });
 
-// Borrar documentos (delete)
-function deletePost(id) {
-  let removeMessage = confirm('¿Quiere eliminar la publicación?');
-  if (removeMessage === true) {
-    db.collection('userMessages').doc(id).delete().then(function () {
-      console.log('Document successfully deleted!');
-    }).catch(function (error) {
-      console.error('Error removing document: ', error);
-    });
-  }
-}
-
-// Editar documentos (update)
-function edit(id, message) {
-  document.getElementById('messageArea').value = message;
-  let btnPost = document.getElementById('btnPost');
-  btnPost.innerHTML = 'Guardar cambios';
-
-  btnPost.onclick = function () {
-    let editPost = db.collection('userMessages').doc(id);
-
-    let message = document.getElementById('messageArea').value;
-
-    return editPost.update(
-      {
-        textMessage: message
-      })
-      .then(function () {
-        console.log('Document successfully updated!');
-        btnPost.innerHTML = 'Publicar';
-        btnPost.onclick = userPost;
-        document.getElementById('messageArea').value = '';
-      })
-      .catch(function (error) {
-        // The document probably doesn't exist.
-        console.error('Error updating document: ', error);
-      });
-  };
-} 
