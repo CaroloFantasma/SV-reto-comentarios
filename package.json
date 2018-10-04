@@ -1,0 +1,19 @@
+{
+  "name": "reto-comentarios",
+  "version": "1.0.0",
+  "description": "Sección de comentarios de una plataforma.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "comentarios",
+    "crud",
+    "Firebase",
+    "database",
+    "vanilla",
+    "JavaScript"
+  ],
+  "author": "Carolina Lastra",
+  "license": "ISC"
+}
