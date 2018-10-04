@@ -27,8 +27,8 @@ db.collection('userMessages').onSnapshot((querySnapshot) => {
     container.innerHTML += `
       <div class="col-12" id="divContainer">
       <p>${doc.data().textMessage}</p>
-      <i type="button" class="far fa-edit 2x" onclick="edit('${doc.id}','${doc.data().textMessage}')"> </i>
-      <i type="button" class="fas fa-trash-alt 2x" onclick="deletePost('${doc.id}')"></i>
+      <i type="button" class="far fa-edit icon" onclick="edit('${doc.id}','${doc.data().textMessage}')"> </i>
+      <i type="button" class="fas fa-trash-alt icon" onclick="deletePost('${doc.id}')"></i>
       </div>
       `;
   });

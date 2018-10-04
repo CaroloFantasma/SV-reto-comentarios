@@ -1,18 +1,26 @@
-
-.formPost {
-  margin-top: 0%;
-  margin-bottom: 0%;
-  padding-top: 0%;
+body {
+  background-image: url(https://images.pexels.com/photos/325703/pexels-photo-325703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #messageArea {
   margin-top: 5%;
-  background-color: #d64f4f11;
+  background-color: #f2f2f2;
+  resize: none;
+  border: solid grey 1px;
+  margin-bottom: 5%;
+}
+
+.formPost {
+  width: 40%;
+  margin-left: 28%;
 }
 
 #btnPost {
-  margin-left: 56%;
-  width: 70%;
+  margin-left: 51.5%;
   background-color: #d64f4f;
   color: #FAFAFA;
   border: #444343;
@@ -20,29 +28,52 @@
 
 #divContainer {
   border: solid grey 1px;
-  width: 90%;
-  margin-top: 1%;
+  width: 100%;
+  margin-top: 1.5%;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 4%;
   border-radius: 2%;
-  background-color: #d64f4f11;
+  background-color: #f2f2f2;
   border-radius: 3px;
 }
 
-@media(min-width: 768px) {
-  
-  #messageArea {
-    width: 50%;
-    height: 80%;
-    margin-left: 25%;
+#messageContainer {
+  width: 44%;
+  margin-left: 26%;
+}
+
+.icon {
+  font-size: 16px;
+  margin-right: 1%;
+}
+
+@media(max-width: 768px) {
+
+  .formPost {
+    width: 70%;
+    margin-left: 14%;
   }
 
+  #btnPost {
+    margin-left: 2%;
+    margin-top: 5%;
+  }
+
+  #messageContainer {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
+
+@media(min-width: 320px) {
   #divContainer {
-    width: 45%;
+    width: 90%;
   }
 
-  #btnPost{
-    width: 20% ;
+  #btnPost {
+    margin-left: 2%;
+    margin-bottom: 8%;
   }
 }
