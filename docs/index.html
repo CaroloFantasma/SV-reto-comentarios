@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Reto-comentarios</title>
+</head>
+
+<body>
+
+  <!--Sección crear publicación -->
+  <section class="formPost">
+    <div class="form-group">
+      <textarea class="form-control" rows="3" placeholder="¿Qué estás pensando?" id="messageArea"></textarea>
+    </div>
+    <div id="botones" class="row">
+      <div class="col-6">
+        <button onclick="userPost()" type="button" class="btn btn-primary" id="btnPost">PUBLICAR</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Container de publicaciones -->
+  <section>
+    <div id="messageContainer"></div>
+  </section>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDlXLQhRmoeejfGhNYb5kceKuWI06wqWm8",
+      authDomain: "reto-comentarios.firebaseapp.com",
+      databaseURL: "https://reto-comentarios.firebaseio.com",
+      projectId: "reto-comentarios",
+      storageBucket: "reto-comentarios.appspot.com",
+      messagingSenderId: "628872577395"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <!-- Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
